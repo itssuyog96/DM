@@ -1,0 +1,198 @@
+/*
+
+	Theme Name: ARCT - Architects Corporate Template
+	Theme URI: http://locotheme.com/arct-html/
+	Description: Responsive Multipurpose HTML5 Template
+	Version: 1.0
+	Author: Loco Theme
+	Author URI: http://www.locotheme.com
+
+	- - - - - Contents - - - - -
+	
+	01 - Max 480px
+	02 - Max 767px
+	03 - Max 991px
+	04 - Max 1024
+	05 - Min 768px
+	06 - Min 992px
+	07 - Min 1200px
+
+	- - - - - - - - - - - - - -
+	
+*/	
+
+/*  01 -  Max 480px
+-----------------------------------------------------------*/
+@media (max-width: 480px){
+	
+}
+
+/*  02 -  Max 767px
+-----------------------------------------------------------*/
+@media (max-width: 767px){
+	.site-back-top{
+		right				: -99999px;
+	}
+	.site-wrapper .site-page{
+		padding				: 20px 10px;
+	}
+	.site-wrapper .site-page h1{
+		font-size			: 2em;
+	}
+	.site-wrapper .site-page h2{
+		font-size			: 1em;
+	}
+	.contact-info li{
+		text-align			: center;
+	}
+	.contact-info li .fa{
+		display				: block;
+		margin				: 0 auto 10px auto;
+	}
+	.shadow-top.padding-all h2.right{
+		display				: block;
+		padding-right		: 0;
+		text-align			: center;
+	}
+	.shadow-top.padding-all h2.right:after{
+		display				: none;
+	}
+	.full-width{
+		margin-left			: -10px;
+		margin-right		: -10px;
+	}
+	.home-projects{
+		margin-top			: 80px;
+	}
+	.center-mobile{
+		text-align			: center;
+	}
+	.block-mobile{
+		display				: block !important;
+	}
+	.padding-all{
+		padding				: 15px;
+	}
+	.padding-all.padding-none-right{
+		padding-right		: 15px !important;
+	}
+	.item-filter{
+		padding-bottom		: 10px;
+	}
+	.item-filter ul li{
+		width				: 50%;
+		margin-bottom		: 10px;
+	}
+	.item-filter ul li a{
+		display				: block;
+		overflow			: hidden;
+	}
+	.number-list .number-box{
+		margin-bottom		: 15px;
+	}
+	.grid-list .grid-box{
+		margin-bottom		: 10px;
+		-ms-filter				: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		filter					: alpha(opacity=100);
+		-moz-opacity			: 1;
+		-khtml-opacity			: 1;
+		opacity					: 1;
+	}
+	.service-list .item{
+		margin-bottom		: 10px;
+	}
+	.btn{
+		width				: 100%;
+		display				: block;
+	}
+	.btn-prev,
+	.btn-next{
+		text-align			: center;
+	}
+	.row.project-nav div{
+		margin-bottom		: 10px;
+	}
+	.row.project-nav div:last-child{
+		margin-bottom		: 0;
+	}
+	.post-detail .post-share{
+		top					: -15px;
+	}
+	.post-detail .post-comments h2 .btn{
+		margin-top			: 10px;
+	}
+	.post-detail .post-comments .comment-list .comment{
+		padding-left		: 0;
+	}
+	.post-detail .post-comments .comment-list .comment .comment-avatar{
+		position			: initial;
+		margin				: 0 auto 10px auto;
+	}
+	.post-detail .post-comments .comment-list .comment .comment-info{
+		text-align			: center;
+	}
+	.post-detail .post-comments .comment-list .comment .comment-info:before{
+		display				: none;
+	}
+	.post-detail .post-comments .comment-list .comment .comment-info .comment-message{
+		font-size			: 14px;
+	}
+}
+
+/*  03 -  Max 991px
+-----------------------------------------------------------*/
+@media (max-width: 991px){
+	.data-form .row > div{
+		margin-bottom		: 15px;
+	}
+	.data-form .row > div:last-child{
+		margin-bottom		: 0;
+	}
+	.padding-all.padding-none-right{
+		padding-right		: 30px;
+	}
+}
+
+/*  04 -  Max 1024px
+-----------------------------------------------------------*/
+@media (max-width: 1024px){
+	.site-toggle{
+		left				: 0;
+		color				: #000;
+		background-color	: #fff;
+	}
+	.site-menu{
+		display				: none;
+		left				: -240px;
+	}
+	.site-wrapper .site-page{
+		width				: 100%;
+		margin-left			: 0;
+	}
+	.btn-prev .fa,
+	.btn-next .fa{
+		margin				: 0 10px;
+	}
+	.btn-prev,
+	.btn-next{
+		padding					: 0;
+	}
+}
+
+/*  05 -  Min 768px
+-----------------------------------------------------------*/
+@media (min-width: 768px){
+	
+}
+
+/*  06 -  Min 992px
+-----------------------------------------------------------*/
+@media (min-width: 992px){
+	
+}
+
+/*  07 -  Min 1200px
+-----------------------------------------------------------*/
+@media (min-width: 1200px){
+	
+}
