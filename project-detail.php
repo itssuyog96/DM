@@ -47,41 +47,16 @@
 	<!-- Site Menu Button -->
 	<button class="site-toggle" type="button"><i class="fa fa-bars"></i></button>
 	<!-- Site Menu Button End -->
-	
+
 	<!-- Site Menu -->
-	<div class="site-menu">
-		<div class="menu-logo"><a href="index.html">ARCT <span class="yellow">|</span> <b>ARCHITECTS</b></a></div>
-		<div class="menu-nav">
-			<ul>
-				<li><a href="index.html">HOME</a></li>
-				<li><a href="about.html">ABOUT</a></li>
-				<li class="active"><a href="projects.html">PROJECTS</a></li>
-				<li><a href="services.html">SERVICES</a></li>
-				<li><a href="clients.html">CLIENTS</a></li>
-				<li><a href="team.html">TEAM</a></li>
-				<li><a href="blog-1.html">BLOG</a></li>
-				<li><a href="contact.html">CONTACT</a></li>
-			</ul>
-		</div>
-		<div class="menu-search">
-			<form>
-				<input name="search" type="text" placeholder="SEARCH">
-				<button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
-			</form>
-		</div>
-		<div class="menu-footer">
-			<ul class="social-icons nav-default clearfix">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-google"></i></a></li>
-				<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-			</ul>
-			<p>© Arct | Architects Design Studio</p>
-		</div>
-	</div>
+	<?php 
+		$menu = new Menu();
+		$menu->menu_generator();
+		$menu = NULL;
+	?>
 	<!-- Site Menu End -->
 	
+
 	<!-- Site Content -->
 	<div class="site-wrapper">
 		<div class="site-page shadow-top">
