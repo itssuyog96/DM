@@ -8,3 +8,4 @@
 			-change img_url text field to browse
 WIP			-add function to generate projects for project-all.php
 			-add project-meta table
+			-change project title to project category
