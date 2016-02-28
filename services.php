@@ -6,7 +6,7 @@ require_once("menu.php");
 <head>
 <!-- Basic Page Head -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>ARCT - Architects Corporate Template</title>
+<title><?php echo $site_title; ?></title>
 <meta name="description" content="ARCT - Architects Corporate Template">
 <meta name="author" content="Loco Theme - locotheme.com">
 <meta name="keywords" content="architects, architect, multipurpose, html5 template, premium template, theme, corporate">
