@@ -53,7 +53,7 @@
 		if($reply == 'true')
 		{
 			echo "<br>Redirecting...";
-			sleep(10);
+			sleep(2);
 			redirect($site_url.'\input.php');
 		}
 		else
