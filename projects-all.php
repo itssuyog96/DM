@@ -1,5 +1,6 @@
 <?php
 require_once("menu.php");
+require_once("projects.php");
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -74,11 +75,10 @@ require_once("menu.php");
 			<div class="item-filter center">
 				<ul class="nav-default clearfix">
 					<li><a href="#" data-filter=".item" class="active">All</a></li>
-					<li><a href="#" data-filter=".filter1">Museum</a></li>
-					<li><a href="#" data-filter=".filter2">Cultural</a></li>
-					<li><a href="#" data-filter=".filter3">Educational</a></li>
-					<li><a href="#" data-filter=".filter4">Housing</a></li>
-					<li><a href="#" data-filter=".filter5">Offices</a></li>
+					<?php
+						$proj_desc = new Project();
+						$proj_desc->proj_filter();
+					?>
 				</ul>
 			</div>
 			<!-- Item Filter End -->
@@ -90,231 +90,12 @@ require_once("menu.php");
 				<!-- Item Width Size End -->
 				
 				<!-- Item -->
-				<div class="item masonry-item filter1 padding-none col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<!-- Item Image -->
-					<div class="item-image"><img src="assets/img/project-1.png" class="img-full" alt="Project Name"></div>
-					<!-- Item Image End -->
-					
-					<!-- Item Description -->
-					<div class="item-desc">
-						<a class="link" href="project-detail.html">
-							<div class="desc-content">
-								<span class="yellow">Museum</span>
-								<span class="title">Lorem Ipsum Dolor</span>
-							</div>
-						</a>
-					</div>
-					<!-- Item Description End -->
-				</div>
-				<!-- Item End -->
 				
-				<!-- Item -->
-				<div class="item masonry-item filter2 padding-none col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<!-- Item Image -->
-					<div class="item-image"><img src="assets/img/project-2.png" class="img-full" alt="Project Name"></div>
-					<!-- Item Image End -->
+				<?php
 					
-					<!-- Item Description -->
-					<div class="item-desc">
-						<a class="link" href="project-detail.html">
-							<div class="desc-content">
-								<span class="yellow">Cultural</span>
-								<span class="title">Consectetur Adipiscing</span>
-							</div>
-						</a>
-					</div>
-					<!-- Item Description End -->
-				</div>
-				<!-- Item End -->
-				
-				<!-- Item -->
-				<div class="item masonry-item filter3 padding-none col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<!-- Item Image -->
-					<div class="item-image"><img src="assets/img/project-3.png" class="img-full" alt="Project Name"></div>
-					<!-- Item Image End -->
-					
-					<!-- Item Description -->
-					<div class="item-desc">
-						<a class="link" href="project-detail.html">
-							<div class="desc-content">
-								<span class="yellow">Educational</span>
-								<span class="title">Integer Egestas Pellentesque</span>
-							</div>
-						</a>
-					</div>
-					<!-- Item Description End -->
-				</div>
-				<!-- Item End -->
-				
-				<!-- Item -->
-				<div class="item masonry-item filter4 padding-none col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<!-- Item Image -->
-					<div class="item-image"><img src="assets/img/project-4.png" class="img-full" alt="Project Name"></div>
-					<!-- Item Image End -->
-					
-					<!-- Item Description -->
-					<div class="item-desc">
-						<a class="link" href="project-detail.html">
-							<div class="desc-content">
-								<span class="yellow">Housing</span>
-								<span class="title">Euismod Lectus</span>
-							</div>
-						</a>
-					</div>
-					<!-- Item Description End -->
-				</div>
-				<!-- Item End -->
-				
-				<!-- Item -->
-				<div class="item masonry-item filter5 padding-none col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<!-- Item Image -->
-					<div class="item-image"><img src="assets/img/project-5.png" class="img-full" alt="Project Name"></div>
-					<!-- Item Image End -->
-					
-					<!-- Item Description -->
-					<div class="item-desc">
-						<a class="link" href="project-detail.html">
-							<div class="desc-content">
-								<span class="yellow">Offices</span>
-								<span class="title">Aliquam Pellentesque</span>
-							</div>
-						</a>
-					</div>
-					<!-- Item Description End -->
-				</div>
-				<!-- Item End -->
-				
-				<!-- Item -->
-				<div class="item masonry-item filter1 padding-none col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<!-- Item Image -->
-					<div class="item-image"><img src="assets/img/project-1.png" class="img-full" alt="Project Name"></div>
-					<!-- Item Image End -->
-					
-					<!-- Item Description -->
-					<div class="item-desc">
-						<a class="link" href="project-detail.html">
-							<div class="desc-content">
-								<span class="yellow">Museum</span>
-								<span class="title">Lorem Ipsum Dolor</span>
-							</div>
-						</a>
-					</div>
-					<!-- Item Description End -->
-				</div>
-				<!-- Item End -->
-				
-				<!-- Item -->
-				<div class="item masonry-item filter2 padding-none col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<!-- Item Image -->
-					<div class="item-image"><img src="assets/img/project-2.png" class="img-full" alt="Project Name"></div>
-					<!-- Item Image End -->
-					
-					<!-- Item Description -->
-					<div class="item-desc">
-						<a class="link" href="project-detail.html">
-							<div class="desc-content">
-								<span class="yellow">Cultural</span>
-								<span class="title">Consectetur Adipiscing</span>
-							</div>
-						</a>
-					</div>
-					<!-- Item Description End -->
-				</div>
-				<!-- Item End -->
-				
-				<!-- Item -->
-				<div class="item masonry-item filter3 padding-none col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<!-- Item Image -->
-					<div class="item-image"><img src="assets/img/project-3.png" class="img-full" alt="Project Name"></div>
-					<!-- Item Image End -->
-					
-					<!-- Item Description -->
-					<div class="item-desc">
-						<a class="link" href="project-detail.html">
-							<div class="desc-content">
-								<span class="yellow">Educational</span>
-								<span class="title">Integer Egestas Pellentesque</span>
-							</div>
-						</a>
-					</div>
-					<!-- Item Description End -->
-				</div>
-				<!-- Item End -->
-				
-				<!-- Item -->
-				<div class="item masonry-item filter4 padding-none col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<!-- Item Image -->
-					<div class="item-image"><img src="assets/img/project-4.png" class="img-full" alt="Project Name"></div>
-					<!-- Item Image End -->
-					
-					<!-- Item Description -->
-					<div class="item-desc">
-						<a class="link" href="project-detail.html">
-							<div class="desc-content">
-								<span class="yellow">Housing</span>
-								<span class="title">Euismod Lectus</span>
-							</div>
-						</a>
-					</div>
-					<!-- Item Description End -->
-				</div>
-				<!-- Item End -->
-				
-				<!-- Item -->
-				<div class="item masonry-item filter5 padding-none col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<!-- Item Image -->
-					<div class="item-image"><img src="assets/img/project-5.png" class="img-full" alt="Project Name"></div>
-					<!-- Item Image End -->
-					
-					<!-- Item Description -->
-					<div class="item-desc">
-						<a class="link" href="project-detail.html">
-							<div class="desc-content">
-								<span class="yellow">Offices</span>
-								<span class="title">Aliquam Pellentesque</span>
-							</div>
-						</a>
-					</div>
-					<!-- Item Description End -->
-				</div>
-				<!-- Item End -->
-				
-				<!-- Item -->
-				<div class="item masonry-item filter1 padding-none col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<!-- Item Image -->
-					<div class="item-image"><img src="assets/img/project-1.png" class="img-full" alt="Project Name"></div>
-					<!-- Item Image End -->
-					
-					<!-- Item Description -->
-					<div class="item-desc">
-						<a class="link" href="project-detail.html">
-							<div class="desc-content">
-								<span class="yellow">Museum</span>
-								<span class="title">Lorem Ipsum Dolor</span>
-							</div>
-						</a>
-					</div>
-					<!-- Item Description End -->
-				</div>
-				<!-- Item End -->
-				
-				<!-- Item -->
-				<div class="item masonry-item filter2 padding-none col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<!-- Item Image -->
-					<div class="item-image"><img src="assets/img/project-2.png" class="img-full" alt="Project Name"></div>
-					<!-- Item Image End -->
-					
-					<!-- Item Description -->
-					<div class="item-desc">
-						<a class="link" href="project-detail.html">
-							<div class="desc-content">
-								<span class="yellow">Cultural</span>
-								<span class="title">Consectetur Adipiscing</span>
-							</div>
-						</a>
-					</div>
-					<!-- Item Description End -->
-				</div>
+					$proj_desc->gen_project_desc();
+				?>
+
 				<!-- Item End -->
 			</div>
 			<!-- Item List End -->
