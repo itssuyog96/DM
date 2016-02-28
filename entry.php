@@ -54,7 +54,7 @@
 		{
 			echo "<br>Redirecting...";
 			sleep(2);
-			redirect($site_url.'\input.php');
+			redirect($site_url.'/input.php');
 		}
 		else
 		{
