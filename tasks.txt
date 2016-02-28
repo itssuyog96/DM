@@ -10,3 +10,6 @@ DONE		-add function to generate projects for project-all.php
 			-add project-meta table
 			-change project title to project category
 DONE		-function for generating project id
+			-replace all fields with a button in input.php
+WIP			-create login panel
+			-create user table
