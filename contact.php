@@ -1,3 +1,6 @@
+<?php
+require_once("menu.php");
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -74,6 +77,7 @@
 			<!-- Grid Row -->
 			<div class="row margin-none">
 				<!-- Grid Col -->
+
 				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-none">
 					<div class="shadow-top padding-all">
 						<h2 class="title-border right">Contact Information</h2>
