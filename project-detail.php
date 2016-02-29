@@ -2,11 +2,7 @@
 require_once("menu.php");
 require_once("project-edit-opt.php");
 require_once("site_dim.php");
-<<<<<<< HEAD
-=======
 require_once("authenticate.php");
-
->>>>>>> origin/master
 ?>
 <!DOCTYPE html>
 <html lang="en-US">

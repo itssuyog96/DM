@@ -39,16 +39,16 @@ require_once("site_dim.php");
 <body>
 
 <!-- Site Loader -->
-<<<<<<< HEAD
+
 <!--div class="site-loader"><img src="assets/img/loader.gif" alt="Loading"></div-->
-=======
+
 <?php
 	if($loader==1)
 	{
 		echo '<div class="site-loader"><img src="assets/img/loader.gif" alt="Loading"></div>';
 	}
 ?>
->>>>>>> origin/master
+
 <!-- Site Loader End -->
 
 <!-- Site Back Top -->
