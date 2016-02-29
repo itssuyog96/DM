@@ -7,7 +7,7 @@
 <head>
 <!-- Basic Page Head -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title><?php echo $site_title; ?></title>
+<title>ARCT - Architects Corporate Template</title>
 <meta name="description" content="ARCT - Architects Corporate Template">
 <meta name="author" content="Loco Theme - locotheme.com">
 <meta name="keywords" content="architects, architect, multipurpose, html5 template, premium template, theme, corporate">
@@ -64,7 +64,7 @@
 	<div class="site-wrapper">
 		<div class="site-page shadow-top">
 			<!-- Page Title -->
-			<h1 class="center">Site Manager</h1>
+			<h1 class="center">Projects</h1>
 			<!-- Page Title End -->
 			
 			<!-- Page Description -->
@@ -74,129 +74,73 @@
 			<!-- Space -->
 			<div class="space"></div>
 			<!-- Space End -->
-			
-			<!-- Grid Row -->
-			<div class="row margin-none">
-							
-				<!-- Grid Col -->
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-none">
+
+
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-none project">
 					<div class="box-white padding-all">
-						<h2 class="title-border right block-mobile">Update</h2>
-						<div class="data-form">
-							
-
-							<form class="selectme" action="post">
-							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<div class="form-field">
-										<select name="select" placeholder="Select to update">
-											 <option>-Select-</option>
-									         <option value="menu">Menu item</option>
-									         <option value="project">Project</option>
-									         <option value="social">Social Link</option>
-									    </select>
-									</div>
-								</div>
-							</div>
-							</form>
-
-
-						</div>
-					</div>
-				</div>
-
-
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-none menu">
-					<div class="box-white padding-all">
-						<h2 class="title-border right block-mobile">Add new Menu item</h2>
+						<h2 class="title-border right block-mobile">Add new Project details</h2>
 						<div class="data-form">
 
 							
 							<form action="entry.php" method="post">
 							<div class="row">
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 									<label>Label</label>
 									<div class="form-field">
 										<i class="fa fa-user"></i>
-										<input type="text" name="label" placeholder="Enter label" required>
+										<input type="text" name="label" placeholder="Give a descriptive label" required>
 									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<label>Url</label>
-									<div class="form-field">
-										<i class="fa fa-envelope-o"></i>
-										<input type="text" name="url" placeholder="Enter url" required>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<input type="hidden" name="type" value="menu">
-									<input type="submit" class="btn btn-dark" value="ADD MENU ITEM">
-								</div>
-							</div>
-							</form>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-none social">
-					<div class="box-white padding-all">
-						<h2 class="title-border right block-mobile">Add Social link</h2>
-						<div class="data-form">
-
-							<form action="entry.php" method="post">
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<label>Label</label>
+								</div>	
+								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<label>Project Url</label>
 									<div class="form-field">
 										<i class="fa fa-user"></i>
-										<input type="text" name="label" placeholder="Enter label" required>
+										<input type="text" name="url" placeholder="Enter project url" required>
+									</div>
+								</div>			
+								<form method="POST" action="imgpath.cgi" enctype="multipart/form-data">				
+								<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+									<label>Image</label>
+									<div class="row">
+										
+											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+												<input type="hidden" name="type" value="Browse">
+												<input type="submit" class="btn btn-light" value="Browse">
+												<input type="file" name="imgpath">
+											</div>
+									</div>
+								</div>
+								</form>
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+									<label>Title</label>
+									<div class="form-field">
+										<i class="fa fa-user"></i>
+										<input type="text" name="title" placeholder="Enter project title" required>
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<label>Url</label>
+									<label>Sub title</label>
 									<div class="form-field">
-										<i class="fa fa-envelope-o"></i>
-										<input type="text" name="url" placeholder="Enter url" required>
+										<i class="fa fa-user"></i>
+										<input type="text" name="sub_title" placeholder="Enter project Sub title" required>
 									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<input type="hidden" name="type" value="social">
-									<input type="submit" class="btn btn-dark" value="ADD SOCIAL LINK">
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+									<label>Description</label>
+									<div class="form-field">
+										<i class="fa fa-user"></i>
+										<input type="text" name="description" placeholder="Enter project description" required>
+										<textarea name="description" cols="50" rows="5" maxlength="1000"></textarea>
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<input type="hidden" name="type" value="project">
+										<input type="submit" class="btn btn-dark" value="ADD PROJECT">
 								</div>
 							</div>
-							</form>
-						</div>
-					</div>
-				</div>
-
-
-				<form action="123.php">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<input type="hidden" name="type" value="project">
-							<input type="submit" class="btn btn-dark" value="NEW PROJECT">
-							<input type="submit" value="go to projects page">
-						</div>
-					</div>
-				</form>
-				<!-- Grid Col End  -->
-			</div>
-			<!-- Grid Row End -->
-
-			<!-- Space -->
-			<div class="space"></div>
-			<!-- Space End -->
-			
-			
-		</div>
-	</div>
-	<!-- Site Content End -->
-</div>
-
+				<!-- Site Content End -->			
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.js"></script>
@@ -215,42 +159,5 @@
 
 <!-- Custom Scripts -->
 <script src="assets/js/scripts.js"></script>
-<script>
-
-	$('.menu').hide();
-	$('.social').hide();
-	$('.project').hide();
-
-
-	$('select[name="select"]').on('change',function(){
-	   var selectedVal=$(this).val();
-	   switch(selectedVal){
-	       case 'project':
-	                   $('.menu').hide();
-	                   $('.social').hide();
-	                   $('.project').show();
-	             break;
-	       case 'menu':
-	       			   $('.menu').show();
-	       			   $('.social').hide();
-	                   $('.project').hide();
-	             break;
-
-	       case 'social': 
-	                   $('.menu').hide();
-	                   $('.social').show();
-	                   $('.project').hide();
-	             break;
-	       default: //change this according to your need
-	                   $('.project').hide();
-	                   $('.menu').hide();
-	                   $('.social').hide();
-	             break;
-	   }
-	   
-	});
-
-</script>
-
 </body>
 </html>
