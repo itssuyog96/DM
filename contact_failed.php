@@ -1,13 +1,15 @@
 <?php
-require_once("menu.php");
-require_once("site_dim.php");
+	require_once("site_dim.php");
+	require_once("db-config.php");
+	require_once("menu.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
 <!-- Basic Page Head -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title><?php echo $site_title; ?></title>
+<title>ARCT - Architects Corporate Template</title>
 <meta name="description" content="ARCT - Architects Corporate Template">
 <meta name="author" content="Loco Theme - locotheme.com">
 <meta name="keywords" content="architects, architect, multipurpose, html5 template, premium template, theme, corporate">
@@ -81,71 +83,29 @@ require_once("site_dim.php");
 			<!-- Space End -->
 			
 			<!-- Grid Row -->
-			<div class="row margin-none">
-				<!-- Grid Col -->
-
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-none">
-					<div class="shadow-top padding-all">
-						<h2 class="title-border right">Contact Information</h2>
-						<ul class="contact-info">
-							<li><i class="fa fa-map-marker circle"></i>3rd Floor,Shree Gurukrupa,R.H.B. Road,Mulund(W),Mumbai-400080</li>
-							<li><i class="fa fa-mobile circle"></i>+91 75068 48595</li>
-							<li><i class="fa fa-paper-plane circle"></i><a href="mailto:info@designorganists.com" class="yellow">info@designorganists.com</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- Grid Col End -->
+			<div class="row margin-none" centered>
+				
 				
 				<!-- Grid Col -->
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-none">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-none col-md-offset-3">
 					<div class="box-white padding-all">
-						<h2 class="title-border right block-mobile">Contact Form</h2>
-						<div class="data-form">
-							<form action="contact_mail.php" method="post">
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<label>Name</label>
-									<div class="form-field">
-										<i class="fa fa-user"></i>
-										<input type="text" name="name" placeholder="Enter your name" required>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<label>E-Mail</label>
-									<div class="form-field">
-										<i class="fa fa-envelope-o"></i>
-										<input type="email" name="email" placeholder="Enter your email" required>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<label>Telephone</label>
-									<div class="form-field">
-										<i class="fa fa-phone"></i>
-										<input type="tel" name="mob" placeholder="Enter your telephone" required>
-									</div>
-								</div>
-							</div>
-							<div class="row">
+						<!--h2 class="title-border right block-mobile">Contact Form</h2-->
+						<div class="data-form"><center>
+							<h4>Something went wrong!<br /><br />Please try again. If the problem persists contact administrator at <a style="color:blue;" href="mailto:admin@designorganists.com">admin@designorganists.com</a>.<br></h4></center>
+							<br>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<label>Message</label>
-									<div class="form-field">
-										<i class="fa fa-pencil-square-o"></i>
-										<textarea name="msg" placeholder="Enter your message" required></textarea>
-									</div>
+									<a href="contact.php" class="btn btn-default block" style="color:black;">
+										<i class="fa fa-lock">	</i>TRY AGAIN</a>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<input type="submit" class="btn btn-dark" value="SEND YOUR MESSAGE">
-								</div>
-							</div>
-							</form>
+							</h4>
+						<div class="space"></div>
+					
+					
 						</div>
 					</div>
 				</div>
 				<!-- Grid Col End  -->
+
 			</div>
 			<!-- Grid Row End -->
 			
@@ -153,18 +113,6 @@ require_once("site_dim.php");
 			<div class="space"></div>
 			<!-- Space End -->
 			
-			<!-- Grid Row -->
-			<div class="row margin-none">
-				<!-- Grid Col -->
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-none">
-					<div class="box-dark padding-all">
-						<h2 class="title-border right block-mobile">Visit Our Office</h2>
-						<div id="google_map"></div>
-					</div>
-				</div>
-				<!-- Grid Col End -->
-			</div>
-			<!-- Grid Row End -->
 		</div>
 	</div>
 	<!-- Site Content End -->
