@@ -7,6 +7,11 @@
 		'</div>'.
 		'<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"><a href="#" class="btn btn-default block">Delete</i>'.
 			 '</a>'.
+<<<<<<< HEAD
 			 '</div>';
+=======
+			 '</div>'.
+		'</div>';
+>>>>>>> origin/master
 	}		
 ?>
