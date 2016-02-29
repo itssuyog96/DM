@@ -36,7 +36,12 @@
 <body>
 
 <!-- Site Loader -->
-<div class="site-loader"><img src="assets/img/loader.gif" alt="Loading"></div>
+<?php
+	if($loader==1)
+	{
+		echo '<div class="site-loader"><img src="assets/img/loader.gif" alt="Loading"></div>';
+	}
+?>
 <!-- Site Loader End -->
 
 <!-- Site Back Top -->

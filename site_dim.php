@@ -5,4 +5,5 @@
 	$site_subheader_1 = "DM";
 	$site_subheader_2 = "ARCHITECTS";
 	$site_tagline = "We design your dreams";
+	$loader=0;
 ?>

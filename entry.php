@@ -1,6 +1,7 @@
 <?php
 
 	require_once("site_dim.php");
+	
 
 	function new_entry($val)
 	{
