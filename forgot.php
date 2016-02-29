@@ -93,23 +93,8 @@
 						<div class="data-form">
 
 						<?php 
-
-						if(isset($_COOKIE['DESIGNORGANISTS']))
-						{
-						 	$username = $_COOKIE['DESIGNORGANISTS']; 
-						 	$pass = $_COOKIE['hj439043h6sdopjkajkap'];
-						 	$check = mysqli_query($dbc, "SELECT * FROM users WHERE username = '$username'")or die(mysql_error());
-
-						 	while($info = mysqli_fetch_array( $check )){
-						 		if ($pass != $info['password']){}
-						 		else{
-						 			die('<h4>You already logged in!<br /><br />Do you want to logout? <br><br><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="logout.php" class="btn btn-default block" style="color:black;"><i class="fa fa-lock"></i>LOGOUT</a></div></h4><div class="space"></div>');
-								}
-						 	}
-						 }
-
 						 
-						 if (isset($_POST['username'])&&isset($_POST['pass'])) {
+						 if (isset($_POST['username'])) {
 
 							
 						 	
@@ -124,28 +109,26 @@
 						
 							 $check2 = mysqli_num_rows($check);
 							 if ($check2 == 0){
-								die('<h4>That user does not exist in our database.<br /><br />If you think this is wrong try again or create a new account. <br><br><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="login.php" class="btn btn-default block" style="color:black;"><i class="fa fa-lock"></i>GO TO LOGIN</a></div><br><br><br><br><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="login.php" class="btn btn-default block" style="color:black;"><i class="fa fa-edit"></i>CREATE ACCOUNT</a></div></h4><div class="space"></div>');
+								die('<h4>That user does not exist in our database.<br /><br />If you think this is wrong try again or contact administrator at <a style="color:blue;" href="mailto:admin@designorganists.com">admin@designorganists.com</a>. <br><br><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="login.php" class="btn btn-default block" style="color:black;"><i class="fa fa-lock"></i>GO TO LOGIN</a></div><br><br><br><br><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="login.php" class="btn btn-default block" style="color:black;"><i class="fa fa-edit"></i>CREATE ACCOUNT</a></div></h4><div class="space"></div>');
 							}
 
 							while($info = mysqli_fetch_array( $check ))
 							{
-								$_POST['pass'] = stripslashes($_POST['pass']);
-							 	$info['password'] = stripslashes($info['password']);
-							 	$_POST['pass'] = md5($_POST['pass']);
-
-								//gives error if the password is wrong
-							 	if ($_POST['pass'] != $info['password']){
-							 		die('<h4>Incorrect Password!<br /><br />Please try again. <br><br><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="logout.php" class="btn btn-default block" style="color:black;"><i class="fa fa-lock"></i>GO TO LOGIN</a></div></h4><div class="space"></div>');
-							 	}
-								
-								else{ // if login is ok then we add a cookie 
 									$_POST['username'] = stripslashes($_POST['username']); 
-									$hour = time() + 3600; 
-									setcookie('DESIGNORGANISTS', $_POST['username'], $hour); 
-									setcookie('hj439043h6sdopjkajkap', $_POST['pass'], $hour);	 
-							 
-									//then redirect them to the members area 
-									header("Location: index.php"); 
+									$encrypt = md5(96*17+$_POST['username']);
+
+					                $message = "Your password reset link send to your e-mail address.";
+					                $to=$_POST['username'];
+					                $subject="Forget Password";
+					                $from = 'info@designorganists.com';
+					                $body='Hi, <br/> <br/>Your username is '.$_POST['username'].' <br><br>Click here to reset your password '.$site_url.'/reset.php?encrypt='.$encrypt.'&action=reset ';
+					                $headers = "From: " . strip_tags($from) . "\r\n";
+					                $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
+					                $headers .= "MIME-Version: 1.0\r\n";
+					                $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+									
+									if (mail($to, $subject, $body, $headers)){
+								die('<h4>Please check your mail for reset link.<br /><br /></h4>');
 								}
 							}
 						}
@@ -163,37 +146,15 @@
 									</div>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" centered>
-									<label>Password</label>
-									<div class="form-field">
-										<i class="fa fa-lock"></i>
-										<input type="password" name="pass" placeholder="Enter your password" required>
-									</div>
-								</div>
-								
-							</div>
-
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-md-offset-5">
-									<div class="col-md-offset-5 col-sm-offset-7 col-xs-offset-8"><a style="color:grey;" href="forgot.php">Forgot password?</a></div>
-								</div>
-							</div>
 							
 							<div class="row">
 								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-md-offset-5">
-									<input type="submit" class="btn btn-dark" value="  LOG IN  " centered>
+									<input type="submit" class="btn btn-dark" value="  RESET  " centered>
 								</div>
 							</div>
 							</form>
 
-							<hr>
-					
-							<div class="row">
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-md-offset-4">
-									<div class="btn btn-dark" centered><a href="add.php">CREATE NEW ACCOUNT</a></div>
-								</div>
-							</div>
+							
 						<?php
 						}
 						?>
