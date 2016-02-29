@@ -1,13 +1,15 @@
 <?php
-require_once("menu.php");
-require_once("site_dim.php");
+	require_once("site_dim.php");
+	require_once("db-config.php");
+	require_once("menu.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
 <!-- Basic Page Head -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title><?php echo $site_title; ?></title>
+<title>ARCT - Architects Corporate Template</title>
 <meta name="description" content="ARCT - Architects Corporate Template">
 <meta name="author" content="Loco Theme - locotheme.com">
 <meta name="keywords" content="architects, architect, multipurpose, html5 template, premium template, theme, corporate">
@@ -81,71 +83,109 @@ require_once("site_dim.php");
 			<!-- Space End -->
 			
 			<!-- Grid Row -->
-			<div class="row margin-none">
-				<!-- Grid Col -->
-
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-none">
-					<div class="shadow-top padding-all">
-						<h2 class="title-border right">Contact Information</h2>
-						<ul class="contact-info">
-							<li><i class="fa fa-map-marker circle"></i>3rd Floor,Shree Gurukrupa,R.H.B. Road,Mulund(W),Mumbai-400080</li>
-							<li><i class="fa fa-mobile circle"></i>+91 75068 48595</li>
-							<li><i class="fa fa-paper-plane circle"></i><a href="mailto:info@designorganists.com" class="yellow">info@designorganists.com</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- Grid Col End -->
+			<div class="row margin-none" centered>
+				
 				
 				<!-- Grid Col -->
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-none">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-none col-md-offset-3">
 					<div class="box-white padding-all">
-						<h2 class="title-border right block-mobile">Contact Form</h2>
+						<!--h2 class="title-border right block-mobile">Contact Form</h2-->
 						<div class="data-form">
-							<form action="contact_mail.php" method="post">
+
+						<?php 
+								if (isset($_POST['username'])&&isset($_POST['pass'])&&isset($_POST['pass2'])) 
+								{ 
+							
+									if (!get_magic_quotes_gpc()) 
+									{
+										$_POST['username'] = addslashes($_POST['username']);
+									}
+
+									$usercheck = $_POST['username'];
+									$check = mysqli_query($dbc, "SELECT username FROM users WHERE username = '$usercheck'") 
+									or die(mysqli_error());
+									$check2 = mysqli_num_rows($check);
+
+									
+									if ($check2 != 0) 
+									{
+									 	die('<h4>Sorry, the username '.$_POST['username'].' is already in use.<br /><br />Please try with a different username. <br><br><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="add.php" class="btn btn-default block" style="color:black;"><i class="fa fa-lock"></i>TRY AGAIN</a></div></h4><div class="space"></div>');
+									}
+
+									
+									if ($_POST['pass'] != $_POST['pass2']) {
+										die('<h4>Your password does not match!<br /><br />Please try again. <br><br><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="add.php" class="btn btn-default block" style="color:black;"><i class="fa fa-lock"></i>TRY AGAIN</a></div></h4><div class="space"></div>');
+									}
+
+									
+									$_POST['pass'] = md5($_POST['pass']);
+
+									if (!get_magic_quotes_gpc()) {
+										$_POST['pass'] = addslashes($_POST['pass']);
+										$_POST['username'] = addslashes($_POST['username']);
+									}
+
+									
+									$insert = "INSERT INTO users (username, password) VALUES ('".$_POST['username']."', '".$_POST['pass']."')";
+									$add_member = mysqli_query($dbc, $insert);
+									?>
+
+									 <h1>Registered</h1>
+
+									 <p><h4>Thank you, you have registered.<br /><br />You may now log in. <br><br><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="login.php" class="btn btn-default block" style="color:black;"><i class="fa fa-lock"></i>GO TO LOGIN</a></div></h4><div class="space"></div></p>
+
+							<?php 
+								}
+								
+						else{
+						// if they are not logged in 
+						?>
+							<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 							<div class="row">
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<label>Name</label>
-									<div class="form-field">
-										<i class="fa fa-user"></i>
-										<input type="text" name="name" placeholder="Enter your name" required>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<label>E-Mail</label>
+								
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<label>Username</label>
 									<div class="form-field">
 										<i class="fa fa-envelope-o"></i>
-										<input type="email" name="email" placeholder="Enter your email" required>
+										<input type="email" name="username" placeholder="Enter your email-id" required>
 									</div>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<label>Telephone</label>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" centered>
+									<label>Password</label>
 									<div class="form-field">
-										<i class="fa fa-phone"></i>
-										<input type="tel" name="mob" placeholder="Enter your telephone" required>
+										<i class="fa fa-lock"></i>
+										<input type="password" name="pass" placeholder="Enter your password"  maxlength="10" required>
 									</div>
 								</div>
+								
 							</div>
 							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<label>Message</label>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" centered>
+									<label>Confirm password</label>
 									<div class="form-field">
-										<i class="fa fa-pencil-square-o"></i>
-										<textarea name="msg" placeholder="Enter your message" required></textarea>
+										<i class="fa fa-lock"></i>
+										<input type="password" name="pass2" placeholder="Enter your password" maxlength="10" required>
 									</div>
 								</div>
+								
 							</div>
+							
 							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<input type="submit" class="btn btn-dark" value="SEND YOUR MESSAGE">
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-md-offset-5">
+									<input type="submit" class="btn btn-dark" value="  REGISTER  " centered>
 								</div>
 							</div>
 							</form>
+						<?php
+						}
+						?>
 						</div>
 					</div>
 				</div>
 				<!-- Grid Col End  -->
+
 			</div>
 			<!-- Grid Row End -->
 			
@@ -153,18 +193,6 @@ require_once("site_dim.php");
 			<div class="space"></div>
 			<!-- Space End -->
 			
-			<!-- Grid Row -->
-			<div class="row margin-none">
-				<!-- Grid Col -->
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-none">
-					<div class="box-dark padding-all">
-						<h2 class="title-border right block-mobile">Visit Our Office</h2>
-						<div id="google_map"></div>
-					</div>
-				</div>
-				<!-- Grid Col End -->
-			</div>
-			<!-- Grid Row End -->
 		</div>
 	</div>
 	<!-- Site Content End -->

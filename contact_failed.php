@@ -1,8 +1,7 @@
 <?php
-require_once("menu.php");
-require_once("projects.php");
-require_once("project-edit-opt.php");
-require_once("site_dim.php");
+	require_once("site_dim.php");
+	require_once("db-config.php");
+	require_once("menu.php");
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +9,7 @@ require_once("site_dim.php");
 <head>
 <!-- Basic Page Head -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title><?php echo $site_title; ?></title>
+<title>ARCT - Architects Corporate Template</title>
 <meta name="description" content="ARCT - Architects Corporate Template">
 <meta name="author" content="Loco Theme - locotheme.com">
 <meta name="keywords" content="architects, architect, multipurpose, html5 template, premium template, theme, corporate">
@@ -39,16 +38,12 @@ require_once("site_dim.php");
 <body>
 
 <!-- Site Loader -->
-<<<<<<< HEAD
-<!--div class="site-loader"><img src="assets/img/loader.gif" alt="Loading"></div-->
-=======
 <?php
 	if($loader==1)
 	{
 		echo '<div class="site-loader"><img src="assets/img/loader.gif" alt="Loading"></div>';
 	}
 ?>
->>>>>>> origin/master
 <!-- Site Loader End -->
 
 <!-- Site Back Top -->
@@ -76,43 +71,49 @@ require_once("site_dim.php");
 	<div class="site-wrapper">
 		<div class="site-page shadow-top">
 			<!-- Page Title -->
-			<h1 class="center">Projects</h1>
+			<h1 class="center">Contact Us</h1>
 			<!-- Page Title End -->
 			
 			<!-- Page Description -->
 			<h2 class="title-border center">An award-winning architecture &amp; interior design studio</h2>
 			<!-- Page Description End -->
 			
-			<!-- Item Filter -->
-			<div class="item-filter center">
-				<ul class="nav-default clearfix">
-					<li><a href="#" data-filter=".item" class="active">All</a></li>
-					<?php
-						$proj_desc = new Project();
-						$proj_desc->proj_filter();
-					?>
-				</ul>
-			</div>
-			<!-- Item Filter End -->
+			<!-- Space -->
+			<div class="space"></div>
+			<!-- Space End -->
 			
-			<!-- Item List -->
-			<div class="item-list masonry-list">
-				<!-- Item Width Size -->
-				<div class="grid-sizer padding-none col-lg-3 col-md-4 col-sm-6 col-xs-12"></div>
-				<!-- Item Width Size End -->
+			<!-- Grid Row -->
+			<div class="row margin-none" centered>
 				
-				<!-- Item -->
 				
-				<?php
+				<!-- Grid Col -->
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-none col-md-offset-3">
+					<div class="box-white padding-all">
+						<!--h2 class="title-border right block-mobile">Contact Form</h2-->
+						<div class="data-form"><center>
+							<h4>Something went wrong!<br /><br />Please try again. If the problem persists contact administrator at <a style="color:blue;" href="mailto:admin@designorganists.com">admin@designorganists.com</a>.<br></h4></center>
+							<br>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<a href="contact.php" class="btn btn-default block" style="color:black;">
+										<i class="fa fa-lock">	</i>TRY AGAIN</a>
+								</div>
+							</h4>
+						<div class="space"></div>
 					
-					$proj_desc->gen_project_desc();
-				?>
+					
+						</div>
+					</div>
+				</div>
+				<!-- Grid Col End  -->
 
-				<!-- Item End -->
 			</div>
-			<!-- Item List End -->
+			<!-- Grid Row End -->
+			
+			<!-- Space -->
+			<div class="space"></div>
+			<!-- Space End -->
+			
 		</div>
-		
 	</div>
 	<!-- Site Content End -->
 </div>

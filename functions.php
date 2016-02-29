@@ -1,4 +1,4 @@
-<?
+<?php
         function url_generate($url)
         {
             $url = strtolower($url);

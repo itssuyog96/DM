@@ -12,6 +12,7 @@
 
 			include("site_dim.php");
 			include('db-config.php');
+			include_once("authenticate.php");
 
 			echo 	'<div class="site-menu">'.
 						'<div class="menu-logo"><a href="index.html">'.$site_subheader_1.' <span class="yellow">|</span> <b>'.$site_subheader_2.'</b></a></div>'.
@@ -28,6 +29,15 @@
 									{
 										echo '<li><a href='.$row[1].'>'.$row[2].'</a></li>'.PHP_EOL;
 									}
+								}
+
+								if(logged_in())
+								{
+									echo '<li><a href="logout.php">LOGOUT</a></li>'.PHP_EOL;
+								}
+								else
+								{
+									echo '<li><a href="login.php">LOGIN<a></li>'.PHP_EOL;
 								}
 
 			echo 			'</ul>'.

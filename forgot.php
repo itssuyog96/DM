@@ -1,13 +1,15 @@
 <?php
-require_once("menu.php");
-require_once("site_dim.php");
+	require_once("site_dim.php");
+	require_once("db-config.php");
+	require_once("menu.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
 <!-- Basic Page Head -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title><?php echo $site_title; ?></title>
+<title>ARCT - Architects Corporate Template</title>
 <meta name="description" content="ARCT - Architects Corporate Template">
 <meta name="author" content="Loco Theme - locotheme.com">
 <meta name="keywords" content="architects, architect, multipurpose, html5 template, premium template, theme, corporate">
@@ -81,71 +83,86 @@ require_once("site_dim.php");
 			<!-- Space End -->
 			
 			<!-- Grid Row -->
-			<div class="row margin-none">
-				<!-- Grid Col -->
-
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-none">
-					<div class="shadow-top padding-all">
-						<h2 class="title-border right">Contact Information</h2>
-						<ul class="contact-info">
-							<li><i class="fa fa-map-marker circle"></i>3rd Floor,Shree Gurukrupa,R.H.B. Road,Mulund(W),Mumbai-400080</li>
-							<li><i class="fa fa-mobile circle"></i>+91 75068 48595</li>
-							<li><i class="fa fa-paper-plane circle"></i><a href="mailto:info@designorganists.com" class="yellow">info@designorganists.com</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- Grid Col End -->
+			<div class="row margin-none" centered>
+				
 				
 				<!-- Grid Col -->
-				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-none">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 padding-none col-md-offset-3">
 					<div class="box-white padding-all">
-						<h2 class="title-border right block-mobile">Contact Form</h2>
+						<!--h2 class="title-border right block-mobile">Contact Form</h2-->
 						<div class="data-form">
-							<form action="contact_mail.php" method="post">
+
+						<?php 
+						 
+						 if (isset($_POST['username'])) {
+
+							
+						 	
+
+						 	// checks it against the database
+						 	if (!get_magic_quotes_gpc()){
+						 		$_POST['username'] = addslashes($_POST['username']);
+						 	}
+
+						 	$check = mysqli_query($dbc, "SELECT * FROM users WHERE username = '".$_POST['username']."'")or die(mysql_error());
+
+						
+							 $check2 = mysqli_num_rows($check);
+							 if ($check2 == 0){
+								die('<h4>That user does not exist in our database.<br /><br />If you think this is wrong try again or contact administrator at <a style="color:blue;" href="mailto:admin@designorganists.com">admin@designorganists.com</a>. <br><br><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="login.php" class="btn btn-default block" style="color:black;"><i class="fa fa-lock"></i>GO TO LOGIN</a></div><br><br><br><br><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><a href="login.php" class="btn btn-default block" style="color:black;"><i class="fa fa-edit"></i>CREATE ACCOUNT</a></div></h4><div class="space"></div>');
+							}
+
+							while($info = mysqli_fetch_array( $check ))
+							{
+									$_POST['username'] = stripslashes($_POST['username']); 
+									$encrypt = md5(96*17+$_POST['username']);
+
+					                $message = "Your password reset link send to your e-mail address.";
+					                $to=$_POST['username'];
+					                $subject="Forget Password";
+					                $from = 'info@designorganists.com';
+					                $body='Hi, <br/> <br/>Your username is '.$_POST['username'].' <br><br>Click here to reset your password '.$site_url.'/reset.php?encrypt='.$encrypt.'&action=reset ';
+					                $headers = "From: " . strip_tags($from) . "\r\n";
+					                $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
+					                $headers .= "MIME-Version: 1.0\r\n";
+					                $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+									
+									if (mail($to, $subject, $body, $headers)){
+								die('<h4>Please check your mail for reset link.<br /><br /></h4>');
+								}
+							}
+						}
+						else{
+						// if they are not logged in 
+						?>
+							<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 							<div class="row">
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<label>Name</label>
-									<div class="form-field">
-										<i class="fa fa-user"></i>
-										<input type="text" name="name" placeholder="Enter your name" required>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<label>E-Mail</label>
+								
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<label>Username</label>
 									<div class="form-field">
 										<i class="fa fa-envelope-o"></i>
-										<input type="email" name="email" placeholder="Enter your email" required>
+										<input type="email" name="username" placeholder="Enter your email-id" required>
 									</div>
 								</div>
 							</div>
+							
 							<div class="row">
-								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<label>Telephone</label>
-									<div class="form-field">
-										<i class="fa fa-phone"></i>
-										<input type="tel" name="mob" placeholder="Enter your telephone" required>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<label>Message</label>
-									<div class="form-field">
-										<i class="fa fa-pencil-square-o"></i>
-										<textarea name="msg" placeholder="Enter your message" required></textarea>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<input type="submit" class="btn btn-dark" value="SEND YOUR MESSAGE">
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-md-offset-5">
+									<input type="submit" class="btn btn-dark" value="  RESET  " centered>
 								</div>
 							</div>
 							</form>
+
+							
+						<?php
+						}
+						?>
 						</div>
 					</div>
 				</div>
 				<!-- Grid Col End  -->
+
 			</div>
 			<!-- Grid Row End -->
 			
@@ -153,18 +170,6 @@ require_once("site_dim.php");
 			<div class="space"></div>
 			<!-- Space End -->
 			
-			<!-- Grid Row -->
-			<div class="row margin-none">
-				<!-- Grid Col -->
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-none">
-					<div class="box-dark padding-all">
-						<h2 class="title-border right block-mobile">Visit Our Office</h2>
-						<div id="google_map"></div>
-					</div>
-				</div>
-				<!-- Grid Col End -->
-			</div>
-			<!-- Grid Row End -->
 		</div>
 	</div>
 	<!-- Site Content End -->
