@@ -1,6 +1,7 @@
 <?php
 require_once("menu.php");
 require_once("projects.php");
+require_once("project-edit-opt.php");
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -36,7 +37,7 @@ require_once("projects.php");
 <body>
 
 <!-- Site Loader -->
-<div class="site-loader"><img src="assets/img/loader.gif" alt="Loading"></div>
+<!--div class="site-loader"><img src="assets/img/loader.gif" alt="Loading"></div-->
 <!-- Site Loader End -->
 
 <!-- Site Back Top -->
@@ -99,6 +100,11 @@ require_once("projects.php");
 				<!-- Item End -->
 			</div>
 			<!-- Item List End -->
+		</div>
+		<div class="row">
+			<?php
+				editdel();
+			?>
 		</div>
 	</div>
 	<!-- Site Content End -->
