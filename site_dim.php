@@ -6,4 +6,5 @@
 	$site_subheader_2 = "ARCHITECTS";
 	$site_tagline = "We design your dreams";
 	$loader=0;
+	$support_mail = "support@designorganists.com";
 ?>
