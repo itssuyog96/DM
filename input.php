@@ -1,5 +1,6 @@
 <?php
 	require_once("menu.php");
+	require_once("site_dim.php");
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +37,12 @@
 <body>
 
 <!-- Site Loader -->
-<div class="site-loader"><img src="assets/img/loader.gif" alt="Loading"></div>
+<?php
+	if($loader==1)
+	{
+		echo '<div class="site-loader"><img src="assets/img/loader.gif" alt="Loading"></div>';
+	}
+?>
 <!-- Site Loader End -->
 
 <!-- Site Back Top -->
@@ -172,18 +178,19 @@
 						</div>
 					</div>
 				</div>
-
-
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-none project ">
+				<div class="box-white padding-all">
 				<form action="123.php">
 					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<input type="hidden" name="type" value="project">
-							<input type="submit" class="btn btn-dark" value="NEW PROJECT">
-							<input type="submit" value="go to projects page">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 btn btn-align:center">
+							<input type="hidden" name="type" value="project" >
+							<input type="submit" class="btn btn-dark" value="CREATE NEW PROJECT">
+							
 						</div>
 					</div>
 				</form>
-				<!-- Grid Col End  -->
+				</div>
+				
 			</div>
 			<!-- Grid Row End -->
 

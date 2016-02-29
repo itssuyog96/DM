@@ -1,7 +1,11 @@
 <?php
 require_once("menu.php");
 require_once("projects.php");
+<<<<<<< HEAD
 require_once("project-edit-opt.php");
+=======
+require_once("site_dim.php");
+>>>>>>> origin/master
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -37,7 +41,16 @@ require_once("project-edit-opt.php");
 <body>
 
 <!-- Site Loader -->
+<<<<<<< HEAD
 <!--div class="site-loader"><img src="assets/img/loader.gif" alt="Loading"></div-->
+=======
+<?php
+	if($loader==1)
+	{
+		echo '<div class="site-loader"><img src="assets/img/loader.gif" alt="Loading"></div>';
+	}
+?>
+>>>>>>> origin/master
 <!-- Site Loader End -->
 
 <!-- Site Back Top -->

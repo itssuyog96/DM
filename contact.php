@@ -1,5 +1,6 @@
 <?php
 require_once("menu.php");
+require_once("site_dim.php");
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -35,7 +36,12 @@ require_once("menu.php");
 <body>
 
 <!-- Site Loader -->
-<div class="site-loader"><img src="assets/img/loader.gif" alt="Loading"></div>
+<?php
+	if($loader==1)
+	{
+		echo '<div class="site-loader"><img src="assets/img/loader.gif" alt="Loading"></div>';
+	}
+?>
 <!-- Site Loader End -->
 
 <!-- Site Back Top -->
@@ -82,9 +88,8 @@ require_once("menu.php");
 					<div class="shadow-top padding-all">
 						<h2 class="title-border right">Contact Information</h2>
 						<ul class="contact-info">
-							<li><i class="fa fa-map-marker circle"></i>2st Floor Road London SE1 7AA</li>
-							<li><i class="fa fa-phone circle"></i>+20 7702 1377</li>
-							<li><i class="fa fa-mobile circle"></i>+20 7481 0228</li>
+							<li><i class="fa fa-map-marker circle"></i>3rd Floor,Shree Gurukrupa,R.H.B. Road,Mulund(W),Mumbai-400080</li>
+							<li><i class="fa fa-mobile circle"></i>+91 75068 48595</li>
 							<li><i class="fa fa-paper-plane circle"></i><a href="mailto:info@designorganists.com" class="yellow">info@designorganists.com</a></li>
 						</ul>
 					</div>

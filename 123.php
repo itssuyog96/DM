@@ -128,13 +128,13 @@
 									<label>Description</label>
 									<div class="form-field">
 										<i class="fa fa-user"></i>
-										<input type="text" name="description" placeholder="Enter project description" required>
-										<textarea name="description" cols="50" rows="5" maxlength="1000"></textarea>
+										<!--<input type="text" name="description" placeholder="Enter project description" required>-->
+										<textarea name="description" cols="50" rows="5" maxlength="1000" placeholder="Enter project description"></textarea>
 									</div>
 								</div>
 								
 								<div class="row">
-									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 btn btn-align:center">
 										<input type="hidden" name="type" value="project">
 										<input type="submit" class="btn btn-dark" value="ADD PROJECT">
 								</div>
