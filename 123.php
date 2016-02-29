@@ -105,7 +105,6 @@
 										
 											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 												<input type="hidden" name="type" value="Browse">
-												<input type="submit" class="btn btn-light" value="Browse">
 												<input type="file" name="imgpath">
 											</div>
 									</div>
