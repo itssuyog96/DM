@@ -1,10 +1,9 @@
 <?php
 require_once("menu.php");
-<<<<<<< HEAD
 require_once("project-edit-opt.php");
-=======
 require_once("site_dim.php");
->>>>>>> origin/master
+require_once("authenticate.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -141,7 +140,8 @@ require_once("site_dim.php");
 						</div>
 						<div class="row project-nav">
 							<?php
-								editdel();
+								if(logged_in())
+									editdel();
 							?>
 						</div>
 					</div>
