@@ -1,11 +1,8 @@
 <?php
 require_once("menu.php");
 require_once("projects.php");
-<<<<<<< HEAD
 require_once("project-edit-opt.php");
-=======
 require_once("site_dim.php");
->>>>>>> origin/master
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -114,11 +111,7 @@ require_once("site_dim.php");
 			</div>
 			<!-- Item List End -->
 		</div>
-		<div class="row">
-			<?php
-				editdel();
-			?>
-		</div>
+		
 	</div>
 	<!-- Site Content End -->
 </div>
