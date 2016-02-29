@@ -13,7 +13,7 @@ DONE		-function for generating project id
 			-replace all fields with a button in input.php
 WIP			-create login panel
 			-create user table
-
+WIP			-create edit and delete option 
 
 
 
