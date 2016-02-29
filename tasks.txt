@@ -13,3 +13,9 @@ DONE		-function for generating project id
 			-replace all fields with a button in input.php
 WIP			-create login panel
 			-create user table
+
+
+
+
+			i have added the extra tables needed by the client in the database
+			for now its link is # 
