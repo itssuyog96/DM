@@ -110,18 +110,53 @@ require_once("authenticate.php");
 				<!-- Grid Col End -->
 				
 				<!-- Grid Col -->
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 padding-none">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 padding-5%">
 					<!-- Project Description -->
-					<div class="box-dark padding-all justify text-small">
-						<h2 class="title-border right">Project Details</h2>
-						<p class="yellow">Project Description:</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sagittis hendrerit risus, id porta augue porta vel. Donec varius quam lorem, nec venenatis massa tincidunt eu. Pellentesque arcu leo, egestas in gravida in, laoreet nec arcu. Nulla lobortis risus eget tortor vehicula dictum.</p>
-						<p class="yellow">Client:</p>
-						<p>Consectetur Museum</p>
-						<p class="yellow">Category:</p>
-						<p>Museum</p>
-						<p class="yellow">Architects:</p>
-						<p>Marilyn Suttle, Jack Mason, Michael Feldstein, John Federico</p>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-5% project ">
+						<!--<div class="box-white padding-all">-->
+							<h2 class="title-border right block-mobile">Project details</h2>
+								<div class="data-form">
+
+							
+								<form action="entry.php" method="post">
+									<div class="row">
+										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+											<label>Project Description</label>
+												<div class="form-field">
+													<i class="fa fa-user"></i>
+													<textarea name="project description" cols="50" rows="5" maxlength="1000" placeholder="Enter project description"></textarea>
+
+												</div>
+										</div>	
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<label>Client</label>
+											<div class="form-field">
+												<i class="fa fa-user"></i>
+												<input type="text" name="client" placeholder="Enter Client Details" required>
+											</div>
+									</div>			
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<label>Category</label>
+											<div class="form-field">
+												<i class="fa fa-user"></i>
+												<input type="text" name="category" placeholder="Enter Category" required>
+											</div>
+									</div>		
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<label>Architects</label>
+											<div class="form-field">
+												<i class="fa fa-user"></i>
+												<input type="text" name="architect" placeholder="Enter Architect's Names" required>
+											</div>
+									</div>
+									<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 btn btn-align:center">
+										<input type="hidden" name="type" value="project">
+										<input type="submit" class="btn btn-default" value="ADD PROJECT">
+								</div>
+								</div>
+						</div>
+					</div>				
 						<ul class="social-icons nav-default clearfix">
 							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
