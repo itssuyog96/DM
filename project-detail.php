@@ -140,7 +140,7 @@ require_once("authenticate.php");
 						</div>
 						<div class="row project-nav">
 							<?php
-								if(logged_in())
+								if(!logged_in())
 									editdel();
 							?>
 						</div>
