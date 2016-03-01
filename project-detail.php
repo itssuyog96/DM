@@ -3,11 +3,16 @@ require_once("menu.php");
 require_once("project-edit-opt.php");
 require_once("site_dim.php");
 <<<<<<< HEAD
+<<<<<<< HEAD
 require_once("authenticate.php");
 =======
 
 require_once("authenticate.php");
 
+
+>>>>>>> origin/master
+=======
+require_once("authenticate.php");
 
 >>>>>>> origin/master
 ?>
